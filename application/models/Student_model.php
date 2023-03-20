@@ -24,6 +24,16 @@ class Student_model extends CI_Model{
         $this->db->update('students',$students);
     
     }
+    function DeleteStudent($stuid){
+        $this->db->where('id',$stuid);
+        $this->db->delete('students');
+    
+    }
+
+    function SearchHere($name){
+        $this->db->like('Name',$name);
+        return $this->db->get('students')->result_array();
+    }
 
 }
 

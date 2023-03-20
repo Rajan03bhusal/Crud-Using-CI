@@ -39,7 +39,6 @@ function Edit($stuid){
         $Student['Course']=$this->input->post('course');
 
         $this->Student_model->UpdateStudent($stuid,$Student);
-        $this->session->set_flashdata('Success',"Data Updated Successfully");
         redirect(base_url().'index.php/Student/index');
 
 
@@ -47,14 +46,39 @@ function Edit($stuid){
 
 
     }
+}
 
+
+
+    function delete($stuid){
+        $this->load->model('Student_model');
+        $this->Student_model->DeleteStudent($stuid);
+        redirect(base_url(). 'index.php/Student/index');
+
+        
+    
+    }
+    
+
+
+
+
+
+function Search_Name(){
+    $this->load->model('Student_model');
+    $Key=$this->input->post('key');
+    $data=array();
+    // $data['result']=$this->Student_model->Search($name);
+     $Name = $this->Student_model->SearchHere($Key);
+     $data['result']=$Name;
+
+    //$students=$this->Student_model->all();
+
+    $this->load->view('Result_name',$data);
 
 }
 
 
-function Delete(){
-
-}
 
     function create(){
         $this->load->model('Student_model');
@@ -82,7 +106,6 @@ function Delete(){
             $Students['Course']=$this->input->post('course');
 
             $this->Student_model->create($Students);
-            $this->session->set_flashdata('Success',"Data Inserted Successfully");
             redirect(base_url().'index.php/Student/index');
 
 
@@ -96,7 +119,7 @@ function Delete(){
         
     }
 
-}
 
+}
 
 ?>

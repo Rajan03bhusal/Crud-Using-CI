@@ -14,14 +14,11 @@
     
     ?>
     <div class="container">
-
-   
-        
         <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-6">
             <h3 class="text-center m-5">View Student Details</h3>
         </div>
-        <div class="col-sm-3 text-right">
+        <div class="col-md-3 text-right">
             <a href="<?php echo base_url().'index.php/Student/create'; ?>" class="btn btn-info m-5"> 
             <i class="fa-solid fa-plus">
 
@@ -30,7 +27,7 @@
 </i>
             </a>
         </div>
-        <div class="col-sm-3 text-right">
+        <div class="col-md-3 text-right">
         <form class="d-flex m-5" role="search" method="POST" action="<?php echo base_url().'index.php/Student/Search_Name'; ?>">
       
 
@@ -60,8 +57,8 @@
       <th scope="col">Delete</th>
 
     </tr>
-   <?php if(!empty($students)){
-    foreach ($students as $stu) { ?>
+   <?php if(!empty($result)){
+    foreach ($result as $stu) { ?>
         <tr>
         <td><?php echo $stu['id']; ?></td>
         <td><?php echo $stu['Name']; ?></td>
@@ -77,12 +74,8 @@
             </a>
         </td>
         <td>
-            <a href="<?php echo base_url().'index.php/Student/delete/'.$stu['id']; ?>" class="btn btn-danger">
-            <i class="fa-sharp fa-solid fa-trash ">
-                
-
-                 
-            </i>
+            <a href="<?php echo base_url().'index.php/Student/Delete/'.$stu['id']; ?>" class="btn btn-danger">
+            <i class="fa-sharp fa-solid fa-trash"></i>
             </a>
         </td>
     </tr> 

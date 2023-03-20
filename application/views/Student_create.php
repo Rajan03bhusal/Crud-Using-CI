@@ -8,18 +8,14 @@
   </head>
   <body>
 
-    <div class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a href="#" class="navbar-brand">Crud Using CI</a>
-        </div>
-
+  <?php
+    include_once('application/Components/navbar.php');
+    
+    ?>
     </div>
     <div class="container">
         <h2 class="text-center m-4">Add Student</h2>
         <div class="row">
-       
-
-
         <form name="addstu"  method="POST" action="<?php echo base_url().'index.php/Student/create'; ?>" >
          <div class="col-md-8">
             
@@ -27,22 +23,16 @@
                 <label for="Name">Name</label>
                 <input type="text" name="name" class="form-control">
                 <?php echo form_error('name'); ?>
-            
             </div>
             <div class="form-group">
                 <label for="Address">Address</label>
                 <input type="text" name="address" class="form-control">
                 <?php echo form_error('address'); ?>
-               
-
-            
             </div>
             <div class="form-group">
                 <label for="Contact">Contact</label>
                 <input type="text" name="contact" class="form-control">
                 <?php echo form_error('contact'); ?>
-
-            
             </div>
 
 
@@ -50,22 +40,17 @@
                 <label for="Email">Email</label>
                 <input type="email" name="email" class="form-control">
                 <?php echo form_error('email'); ?>
-
-            
             </div>
 
             <div class="form-group">
                 <label for="Course">Course</label>
                 <input type="text" name="course" class="form-control">
                 <?php echo form_error('course'); ?>
-
-            
             </div>
             
             <div class="form-group m-2">
-                <button class="btn btn-primary">Sumit</button>
-                <a href="#" class="btn btn-dark">Back</a>
-            
+                <button class="btn btn-info">Sumit</button>
+                <a href="" class="btn btn-dark">Back</a>
             </div>
             
            
